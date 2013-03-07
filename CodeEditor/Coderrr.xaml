@@ -1,0 +1,108 @@
+﻿<Window x:Class="CodeEditor.Coderrr"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Coderrr" Height="600" Width="800" Background="#FFE4E4E4"
+        Icon="Icons/text_x_csharp.ico">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="Open" 
+        CanExecute="OpenCanExecute"
+        Executed="OpenExecuted" />
+        <CommandBinding Command="Save" 
+        CanExecute="SaveCanExecute"
+        Executed="SaveExecuted" />
+    </Window.CommandBindings>
+
+    <Window.InputBindings>
+        <KeyBinding Command="Open" Key="O" Modifiers="Ctrl"/>  
+        <KeyBinding Command="Save" Key="S" Modifiers="Ctrl"/>        
+    </Window.InputBindings>
+    
+    <Grid Background="#FFBCEAA2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="467*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Column="0" FontSize="15" IsMainMenu="true" Margin="0,0,0,0" Padding="20,4,0,0" BorderThickness="0" Background="#FF6DCF5D" >
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Command="Open">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/folder_open_16.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Save" Command="Save">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/save.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Save As" Click="SaveAs_Clicked">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/document_save_as.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Auto Save" Click="AutoSave_Clicked" IsCheckable="True" Name="AutoSave">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/disk_dark_media.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Exit" Click="ExitApp">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/exit.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Copy" Command="ApplicationCommands.Copy">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/copy.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Paste" Command="ApplicationCommands.Paste">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/paste.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Cut" Command="ApplicationCommands.Cut">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/cut.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Preferences" Click="Preferences_Clicked">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/settings.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Project">                
+                <MenuItem Header="Compile" Click="Compile_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/compile.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Run" Click="Run_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/run.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_About">
+                <MenuItem Header="Information" Click="Information_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Icons/get_info.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <RichTextBox Grid.Column="0" Grid.Row="2
+                     " Name="richTextBox" Width="auto" AcceptsTab="True" Margin="0" ScrollViewer.VerticalScrollBarVisibility="Auto" FontFamily="Lucida Console" Background="#FFBCEAA2" BorderThickness="1,0,1,1">
+            <FlowDocument LineHeight="5">
+                <Paragraph/>
+            </FlowDocument>
+        </RichTextBox>
+        
+    </Grid>
+</Window>

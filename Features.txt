@@ -1,0 +1,34 @@
+Features:
+
+   	[x]	Menuitems: File > Open, File > Save, File > Exit, File > Autosave
+                   Edit > Copy, Edit > Paste, Edit > Cut, Edit > Preferences
+                   Project > Compile, Project > Run
+                   About > Information
+ 	[x]	Save and open functionality
+ 	[x]  	Save and open functionality using dialogs (where to store)
+   	[x]	Exit will exit the app
+   	[x]	Information will show developer information in dialog
+   
+Preferences dialog
+   
+		Can select csc.exe path
+		Serializes it to a .xml-file
+
+Autosave
+
+	[x]	Menu item holds checkbox (on or off)
+	[x]   	Autosave will save the current file to disk every 1 minutes
+
+
+Compile and running
+
+	[x]	Possible to compile the current .cs fil
+	[x]	Possible to run the compiled file in another window
+
+Cut / Copy / Paste
+
+	[x]	   Implement cut, copy and paste functionality
+
+Keyboard shortcuts
+
+	[x]   	   Add keyboard shortcuts to menu items.
